@@ -26,6 +26,10 @@
 		    	background-color: #D3D3D3;
 		    }
 		    /*整个tab层居中，宽度为600px*/
+		    #video
+		    {
+		    	background: green;
+		    }
 		    #tabDiv 
 		    {
 		        width:600px;
@@ -85,6 +89,28 @@
 		    }
 		</style>
 		<script type="text/javascript">
+		   var img = new Array(7);
+		 
+	    	var nums = 0;
+	    	if(document.images) {
+	    		for(i = 1;i <= 7; i++) {
+	    			img[i] = new Image();
+	    			img[i].src = "images/"+i+".jpg";
+	    			
+	    		}
+	    	}
+	    	function fort() {
+	    		nums ++;
+	    		document.getElementById('a').href = "images/"+nums+".jpg";
+	    		document.images[0].src = img[nums].src;
+	    		
+	    		if(nums == 7)
+	    			nums = 0;
+	    	}
+	    	function slide() {
+	    		setInterval("fort()",1000);
+	    	}
+	    	
 			//显示tab（tabHeadId：tab头中当前的超链接；tabContentId要显示的层ID）
 	        function showTab(tabHeadId,tabContentId) 
 	        {
@@ -117,7 +143,6 @@
 	    	function showTime() 
 			{
 				today = new Date();
-				
 				var day; var date;
 				if(today.getDay()==0) day = " 星期日"
 				if(today.getDay()==1) day = " 星期一"
@@ -140,11 +165,15 @@
 				document.clock.show.value = date;
 				setTimeout("showTime()",1000);
 			}
+			
+			
+				
 		</script>
 	</head>
-	<body onload="showTime()">
-		<div style="width: 100%; font-family: 微软雅黑; text-align: center">
-	        个人主页</div>
+	<body id="bg_body" onload="showTime();slide();" style="background-image:url(images/5.jpg);background-repeat:no-repeat;background-position:center;background-size:100% 100%">
+		<div style="color: red; font-family: 黑体; background: #3CC48D"><marquee>欢迎访问cnsimo.cn个人主页，希望大家多多支持哦！</marquee></div>
+		<div style="width: 100%; font-family: 微软雅黑; text-align: center; color: white;"><b>
+	        个人主页</b></div>
 	
 	    <div id="tabDiv" style="width: 1000px">
 	
@@ -252,30 +281,9 @@
 	    <div style="text-align: center">
 	    	<form name="clock" onsubmit="0"><input name="show" type="text" size="35" style="text-align: center; background-color: lightyellow; border-width:3;" readonly></form>
 	    </div>
-	    
-	    <script type="text/javascript">
-		    var img = new Array(7);
-		 
-	    	var nums = 0;
-	    	if(document.images) {
-	    		for(i = 1;i <= 7; i++) {
-	    			img[i] = new Image();
-	    			img[i].src = "images/"+i+".jpg";
-	    			
-	    		}
-	    	}
-	    	function fort() {
-	    		nums ++;
-	    		document.getElementById('a').href = "images/"+nums+".jpg";
-	    		document.images[0].src = img[nums].src;
-	    		
-	    		if(nums == 7)
-	    			nums = 0;
-	    	}
-	    	function slide() {
-	    		setInterval("fort()",1000);
-	    	}
-	    	slide();
-	    </script>
+	    <div style='height: 300px; text-align: center; background-image:url(images/timg.jpg); background-repeat:no-repeat;background-position:center;background-size:20% 100%'>
+	    	<br><br><br><br><br><br><br><br><br><br><br>
+	    	<audio src="music/Opera 2 - Vitas.mp3" controls autoplay></audio>
+	    </div>
 	</body>
 </html>
