@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登陆页面</title>
+<style type="text/css">
+</style>
+<script>
+	function verify(form)
+	{
+		if(form.content.value == '')
+		{
+			alert("输入为空！");
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body style="background-color: #3370CC;height:100%;margin:0px;">
+<center>
+<div style="width:100%;heigth:100%;margin: 300px auto;position:absolute;">
+<form name="form1" action="b.jsp" onsubmit="return verify(form1)">
+<table>
+<tr>
+<td><input name="content" type="text" style="width:300px;height:75px;"/></td>
+</tr>
+<tr>
+<td><input type="submit" value="提交" style="width:305px;height:75px;"/></td>
+</tr>
+</table>
+</form>
+</div>
+</center>
+</body>
+</html>
