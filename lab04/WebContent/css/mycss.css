@@ -1,0 +1,31 @@
+h1
+{
+	width: 100%;
+	text-align: center;
+}
+table,table.tr.th,table.tr.td
+{
+	margin: auto;
+	border: 1px  solid #000;
+	clip: auto;
+	margin-bottom: 10px;
+}
+button
+{
+	width: auto;
+	height: auto;
+}
+html,body
+{
+	background-color: bisque;
+}
+#button
+{
+	margin-top: 10px;
+	text-align: center;
+	width: 100%;
+}
+#showInfo
+{
+	text-align: center;
+}
